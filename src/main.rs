@@ -1,16 +1,36 @@
-use itertools::Itertools;
+mod aoc1 {
+    use std::cmp::Ordering;
+    use itertools::Itertools;
 
-fn aoc1(input: String) -> usize {
-    input
-        .lines()
-        .tuple_windows()
-        .filter(|(d1, d2)| d2.len() > d1.len() || (d2.len() == d1.len() && d2 > d1))
-        .count()
+    // Avoid converting string to number
+
+
+    fn compare_numeric_str(x1: &str, x2:& str) -> Ordering {
+        // Assume aligned, non-zero padded numeric string
+        x1.len().cmp(&x2.len()).then(x1.cmp(x2))
+    }
+
+    pub fn part_1(input: String) -> usize {
+        input
+            .lines()
+            .tuple_windows()
+            .filter(|(d1, d2)| compare_numeric_str(d2, d1).is_gt())
+            .count()
+    }
+
+    pub fn part_2(input: String) -> usize  {
+        input
+            .lines()
+            .tuple_windows()
+            .filter(|(discard_d , _, _, new_d)| compare_numeric_str(new_d, discard_d).is_gt())
+            .count()
+    }
 }
+
 
 fn main() {
     let input = std::fs::read_to_string("input/aoc1.txt").unwrap();
-    println!("{}", aoc1(input));
+    println!("{}", aoc1::part_2(input));
 }
 
 #[cfg(test)]
@@ -21,7 +41,12 @@ mod tests {
     #[test_case("1\n2\n3" => 2)]
     #[test_case("2\n1\n3" => 1)]
     #[test_case("12\n123\n1234" => 2)]
-    fn aoc1_test(input: impl Into<String>) -> usize {
-        aoc1(input.into())
+    fn aoc1_part1(input: impl Into<String>) -> usize {
+        aoc1::part_1(input.into())
+    }
+
+    #[test_case("199\n200\n208\n210\n200\n207\n240\n269\n260\n263" => 5)]
+    fn aoc2_part2(input: impl Into<String>) -> usize {
+        aoc1::part_2(input.into())
     }
 }
