@@ -76,7 +76,9 @@ mod aoc2 {
 
 fn main() {
     let mut table = comfy_table::Table::new();
-    table.set_header(["Name", "Runtime", "Output"]);
+    table
+        .set_header(["Name", "Runtime", "Output"])
+        .load_preset(comfy_table::presets::ASCII_MARKDOWN);
 
     let mut total_ns = 0.;
 
