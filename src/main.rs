@@ -2,15 +2,15 @@ mod aoc1 {
     use std::cmp::Ordering;
     use itertools::Itertools;
 
-    // Avoid converting string to number
-
-
     fn compare_numeric_str(x1: &str, x2:& str) -> Ordering {
         // Assume aligned, non-zero padded numeric string
         x1.len().cmp(&x2.len()).then(x1.cmp(x2))
     }
 
     pub fn part_1(input: String) -> usize {
+        // Simple linear scan and compare
+        // Comparing string directly should be bit faster than converting string to number first
+
         input
             .lines()
             .tuple_windows()
@@ -19,6 +19,12 @@ mod aoc1 {
     }
 
     pub fn part_2(input: String) -> usize  {
+        // Compare "sum of three-measurement sliding window"
+        // Notice that between 2 contiguous sliding window,
+        // only the leftmost are put out from and rightmost are put into the sliding window.
+        // So to compare if the sum of next sliding window are greater than the previous slider window,
+        // we can just compare if the number that get put in are greater than the one which get put out.
+
         input
             .lines()
             .tuple_windows()
