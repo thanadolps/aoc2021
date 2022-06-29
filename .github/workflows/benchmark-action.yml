@@ -16,7 +16,7 @@ jobs:
           command: build
           args: --release
       - name: Run benchmark
-        run: ./target/release/aoc2021 | tee benchmark.md
+        run: ./target/release/aoc2021 > benchmark.md
       - name: Commit change
         uses: EndBug/add-and-commit@v9
         with:
