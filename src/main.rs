@@ -103,7 +103,6 @@ mod aoc3 {
     pub fn part_2(input: &str) -> usize {
         let input = input.as_bytes();
         let (n_bit, _) = input.iter().find_position(|&&c| c == b'\n').unwrap();
-        let n_row = (input.len()+1) / (n_bit + 1);
 
         let retrieve_bit = |i: usize| {
             // let i = i-(i%(n_bit+1));
