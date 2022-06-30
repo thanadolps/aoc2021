@@ -29,29 +29,29 @@ pub fn part_2(input: &str) -> usize {
 
     let retrieve_bit = |i: usize| {
         // let i = i-(i%(n_bit+1));
-        (i..i+n_bit).fold(0_u32, |acc, i| {
-            (acc << 1) | (input[i]-b'0') as u32
-        })
+        (i..i + n_bit).fold(0_u32, |acc, i| (acc << 1) | (input[i] - b'0') as u32)
     };
 
     // Split into oxy an co2 based on first bit
-    let (zeros, ones) =
-        (0..input.len()).step_by(n_bit + 1).partition::<Vec<_>, _>(|&i| input[i]==b'0');
+    let (zeros, ones) = (0..input.len())
+        .step_by(n_bit + 1)
+        .partition::<Vec<_>, _>(|&i| input[i] == b'0');
     let (mut oxy_pos, mut co2_pos) = if ones.len() >= zeros.len() {
         (ones, zeros)
-    }
-    else {
+    } else {
         (zeros, ones)
     };
-
 
     // Discard until one left
     let mut offset = 1;
     let oxy = loop {
-        if oxy_pos.len() == 1 { break oxy_pos[0] }
+        if oxy_pos.len() == 1 {
+            break oxy_pos[0];
+        }
         debug_assert!(offset < n_bit);
-        let (zeros, ones) =
-            oxy_pos.iter().partition::<Vec<_>, _>(|&i| input[i+offset]== b'0');
+        let (zeros, ones) = oxy_pos
+            .iter()
+            .partition::<Vec<_>, _>(|&i| input[i + offset] == b'0');
 
         if ones.len() >= zeros.len() {
             oxy_pos = ones;
@@ -63,10 +63,13 @@ pub fn part_2(input: &str) -> usize {
 
     let mut offset = 1;
     let co2 = loop {
-        if co2_pos.len() == 1 { break co2_pos[0] }
+        if co2_pos.len() == 1 {
+            break co2_pos[0];
+        }
         debug_assert!(offset < n_bit);
-        let (zeros, ones) =
-            co2_pos.iter().partition::<Vec<_>, _>(|&i| input[i+offset]== b'0');
+        let (zeros, ones) = co2_pos
+            .iter()
+            .partition::<Vec<_>, _>(|&i| input[i + offset] == b'0');
 
         if zeros.len() <= ones.len() {
             co2_pos = zeros;
@@ -102,9 +105,8 @@ mod tests {
 00010
 01010
         "
-            .trim();
+        .trim();
         assert_eq!(part_1(input), 198);
-
     }
 
     #[test]
@@ -123,7 +125,7 @@ mod tests {
 00010
 01010
         "
-            .trim();
+        .trim();
         assert_eq!(part_2(input), 230);
     }
 }

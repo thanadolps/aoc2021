@@ -50,7 +50,7 @@ up 3
 down 8
 forward 2
         "
-            .trim();
+        .trim();
         assert_eq!(part_1(&input), 150)
     }
 
@@ -64,7 +64,7 @@ up 3
 down 8
 forward 2
         "
-            .trim();
+        .trim();
         assert_eq!(part_2(&input), 900)
     }
 }
