@@ -1,8 +1,15 @@
+extern crate core;
+
 mod aoc1;
 mod aoc2;
 mod aoc3;
+mod aoc4;
 
 fn main() {
+    generate_benchmark()
+}
+
+fn generate_benchmark() {
     let mut table = comfy_table::Table::new();
     table
         .set_header(["Name", "Runtime", "Output"])
@@ -21,6 +28,7 @@ fn main() {
         ("AOC2 P2", "input/aoc2.txt", aoc2::part_2),
         ("AOC3 P1", "input/aoc3.txt", aoc3::part_1),
         ("AOC3 P2", "input/aoc3.txt", aoc3::part_2),
+        ("AOC4 P1", "input/aoc4.txt", aoc4::part_1),
     ] {
         let input = std::fs::read_to_string(input_path).unwrap();
         let bench_stats = easybench::bench(|| f(&input));
