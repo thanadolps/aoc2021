@@ -21,21 +21,21 @@ fn generate_benchmark() {
 
     for (name, input_path, f) in [
         (
-            "AOC1 P1",
+            "Day 1: Sonar Sweep, Part 1",
             "input/aoc1.txt",
             aoc1::part_1 as fn(&str) -> usize,
         ),
-        ("AOC1 P2", "input/aoc1.txt", aoc1::part_2),
-        ("AOC2 P1", "input/aoc2.txt", aoc2::part_1),
-        ("AOC2 P2", "input/aoc2.txt", aoc2::part_2),
-        ("AOC3 P1", "input/aoc3.txt", aoc3::part_1),
-        ("AOC3 P2", "input/aoc3.txt", aoc3::part_2),
-        ("AOC4 P1", "input/aoc4.txt", aoc4::part_1),
-        ("AOC4 P2", "input/aoc4.txt", aoc4::part_2),
-        ("AOC5 P1", "input/aoc5.txt", aoc5::part_1),
-        ("AOC5 P2", "input/aoc5.txt", aoc5::part_2),
-        ("AOC6 P1", "input/aoc6.txt", aoc6::part_1),
-        ("AOC6 P2", "input/aoc6.txt", aoc6::part_2),
+        ("Day 1: Sonar Sweep, Part 2", "input/aoc1.txt", aoc1::part_2),
+        ("Day 2: Dive!, Part 1", "input/aoc2.txt", aoc2::part_1),
+        ("Day 2: Dive!, Part 2", "input/aoc2.txt", aoc2::part_2),
+        ("Day 3: Binary Diagnostic, Part 1", "input/aoc3.txt", aoc3::part_1),
+        ("Day 3: Binary Diagnostic, Part 2", "input/aoc3.txt", aoc3::part_2),
+        ("Day 4: Giant Squid, Part 1", "input/aoc4.txt", aoc4::part_1),
+        ("Day 4: Giant Squid, Part 2", "input/aoc4.txt", aoc4::part_2),
+        ("Day 5: Hydrothermal Venture, Part 1", "input/aoc5.txt", aoc5::part_1),
+        ("Day 5: Hydrothermal Venture, Part 2", "input/aoc5.txt", aoc5::part_2),
+        ("Day 6: Lanternfish, Part 1", "input/aoc6.txt", aoc6::part_1),
+        ("Day 6: Lanternfish, Part 2", "input/aoc6.txt", aoc6::part_2),
     ]
     {
         let input = std::fs::read_to_string(input_path).unwrap();

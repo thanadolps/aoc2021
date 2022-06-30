@@ -1,6 +1,11 @@
 use itertools::Itertools;
 
 fn simulate(states: &[u8], n_day: i32) -> usize {
+    // Potential optimization to O(log(n_day)):
+    // Represent as linear recurrent equation and use fast matrix multiplication
+    // count[n=6, t+1] = count[n=0, t] + count[n=7, t]
+    // count[n=8, t+1] = count[n=0, t]
+    // count[n, t+1] = count[n, t] if n != 6 nand n != 8
 
     // counter[zero_day] = number of lantern fish with state 0
     // counter[(zero_day+x)%9] = number of lantern fish with state x (queue like)
