@@ -29,6 +29,7 @@ fn generate_benchmark() {
         ("AOC3 P1", "input/aoc3.txt", aoc3::part_1),
         ("AOC3 P2", "input/aoc3.txt", aoc3::part_2),
         ("AOC4 P1", "input/aoc4.txt", aoc4::part_1),
+        ("AOC4 P2", "input/aoc4.txt", aoc4::part_2),
     ] {
         let input = std::fs::read_to_string(input_path).unwrap();
         let bench_stats = easybench::bench(|| f(&input));

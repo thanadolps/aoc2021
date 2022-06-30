@@ -10,6 +10,7 @@ itertools = "0.10.3"
 easybench = "1.1.0"
 comfy-table = "6.0.0"
 rayon = "1.5.3"
+heapless = "0.7.14"
 
 [dev-dependencies]
 test-case = "2.1.0"
