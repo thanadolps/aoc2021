@@ -5,6 +5,7 @@ mod aoc2;
 mod aoc3;
 mod aoc4;
 mod aoc5;
+mod aoc6;
 
 fn main() {
     generate_benchmark()
@@ -18,7 +19,7 @@ fn generate_benchmark() {
 
     let mut total_ns = 0.;
 
-    for (name, input_path, f) in &[
+    for (name, input_path, f) in [
         (
             "AOC1 P1",
             "input/aoc1.txt",
@@ -33,6 +34,7 @@ fn generate_benchmark() {
         ("AOC4 P2", "input/aoc4.txt", aoc4::part_2),
         ("AOC5 P1", "input/aoc5.txt", aoc5::part_1),
         ("AOC5 P2", "input/aoc5.txt", aoc5::part_2),
+        ("AOC6 P1", "input/aoc6.txt", aoc6::part_1),
     ]
     {
         let input = std::fs::read_to_string(input_path).unwrap();
