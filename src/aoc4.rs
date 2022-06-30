@@ -1,5 +1,5 @@
 use itertools::Itertools;
-use std::collections::BTreeSet;
+
 use std::str::FromStr;
 
 #[derive(Debug)]
@@ -12,13 +12,13 @@ struct Board {
 impl Board {
     pub fn remove(&mut self, x: u8) {
         for col in self.cols.iter_mut() {
-            if let Some((i, _)) = col.iter().find_position(|&&v| v==x) {
+            if let Some((i, _)) = col.iter().find_position(|&&v| v == x) {
                 col.swap_remove(i);
                 self.sum -= x as u32;
             }
         }
         for row in self.rows.iter_mut() {
-            if let Some((i, _)) = row.iter().find_position(|&&v| v==x) {
+            if let Some((i, _)) = row.iter().find_position(|&&v| v == x) {
                 row.swap_remove(i);
             }
         }
@@ -163,7 +163,7 @@ mod tests {
 22 11 13  6  5
  2  0 12  3  7
 "
-            .trim();
+        .trim();
         assert_eq!(part_2(input), 1924);
     }
 }

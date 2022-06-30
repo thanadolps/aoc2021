@@ -4,6 +4,7 @@ mod aoc1;
 mod aoc2;
 mod aoc3;
 mod aoc4;
+mod aoc5;
 
 fn main() {
     generate_benchmark()
@@ -17,7 +18,7 @@ fn generate_benchmark() {
 
     let mut total_ns = 0.;
 
-    for (name, input_path, f) in [
+    for (name, input_path, f) in &[
         (
             "AOC1 P1",
             "input/aoc1.txt",
@@ -30,7 +31,10 @@ fn generate_benchmark() {
         ("AOC3 P2", "input/aoc3.txt", aoc3::part_2),
         ("AOC4 P1", "input/aoc4.txt", aoc4::part_1),
         ("AOC4 P2", "input/aoc4.txt", aoc4::part_2),
-    ] {
+        ("AOC5 P1", "input/aoc5.txt", aoc5::part_1),
+        ("AOC5 P2", "input/aoc5.txt", aoc5::part_2),
+    ]
+    {
         let input = std::fs::read_to_string(input_path).unwrap();
         let bench_stats = easybench::bench(|| f(&input));
         total_ns += bench_stats.ns_per_iter;
