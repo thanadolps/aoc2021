@@ -1,15 +1,15 @@
-| Name    | Runtime                                                  | Output        |
-|---------|----------------------------------------------------------|---------------|
-| AOC1 P1 |    43.843µs (R²=1.000, 24771 iterations in 81 samples)   | 1581          |
-| AOC1 P2 |    55.811µs (R²=1.000, 18608 iterations in 78 samples)   | 1618          |
-| AOC2 P1 |    19.739µs (R²=1.000, 53116 iterations in 89 samples)   | 2027977       |
-| AOC2 P2 |    20.064µs (R²=1.000, 53116 iterations in 89 samples)   | 1903644897    |
-| AOC3 P1 |    20.468µs (R²=1.000, 53116 iterations in 89 samples)   | 3309596       |
-| AOC3 P2 |      14.3µs (R²=1.000, 70702 iterations in 92 samples)   | 2981085       |
-| AOC4 P1 |   214.127µs (R²=1.000, 4890 iterations in 64 samples)    | 11774         |
-| AOC4 P2 |   545.958µs (R²=0.999, 1877 iterations in 54 samples)    | 4495          |
-| AOC5 P1 |    402.05µs (R²=1.000, 2503 iterations in 57 samples)    | 7269          |
-| AOC5 P2 |    707.49µs (R²=1.000, 1549 iterations in 52 samples)    | 21140         |
-| AOC6 P1 |     1.135µs (R²=1.000, 927079 iterations in 119 samples) | 358214        |
-| AOC6 P2 |     1.729µs (R²=1.000, 633203 iterations in 115 samples) | 1622533344325 |
-| Total   | 2.046719ms                                               |               |
+| Name                                | Runtime                                                   | Output        |
+|-------------------------------------|-----------------------------------------------------------|---------------|
+| Day 1: Sonar Sweep, Part 1          |    47.823µs (R²=1.000, 22518 iterations in 80 samples)    | 1581          |
+| Day 1: Sonar Sweep, Part 2          |    56.952µs (R²=1.000, 18608 iterations in 78 samples)    | 1618          |
+| Day 2: Dive!, Part 1                |    24.035µs (R²=1.000, 43895 iterations in 87 samples)    | 2027977       |
+| Day 2: Dive!, Part 2                |    24.914µs (R²=1.000, 43895 iterations in 87 samples)    | 1903644897    |
+| Day 3: Binary Diagnostic, Part 1    |    17.487µs (R²=1.000, 58429 iterations in 90 samples)    | 3309596       |
+| Day 3: Binary Diagnostic, Part 2    |    20.416µs (R²=1.000, 53116 iterations in 89 samples)    | 2981085       |
+| Day 4: Giant Squid, Part 1          |   251.729µs (R²=1.000, 4039 iterations in 62 samples)     | 11774         |
+| Day 4: Giant Squid, Part 2          |   538.209µs (R²=1.000, 1877 iterations in 54 samples)     | 4495          |
+| Day 5: Hydrothermal Venture, Part 1 |   377.461µs (R²=1.000, 2755 iterations in 58 samples)     | 7269          |
+| Day 5: Hydrothermal Venture, Part 2 |   744.137µs (R²=1.000, 1407 iterations in 51 samples)     | 21140         |
+| Day 6: Lanternfish, Part 1          |       901ns (R²=1.000, 1121768 iterations in 121 samples) | 358214        |
+| Day 6: Lanternfish, Part 2          |     1.399µs (R²=1.000, 766179 iterations in 117 samples)  | 1622533344325 |
+| Total                               | 2.105469ms                                                |               |
