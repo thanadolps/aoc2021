@@ -35,6 +35,7 @@ fn generate_benchmark() {
         ("AOC5 P1", "input/aoc5.txt", aoc5::part_1),
         ("AOC5 P2", "input/aoc5.txt", aoc5::part_2),
         ("AOC6 P1", "input/aoc6.txt", aoc6::part_1),
+        ("AOC6 P2", "input/aoc6.txt", aoc6::part_2),
     ]
     {
         let input = std::fs::read_to_string(input_path).unwrap();
